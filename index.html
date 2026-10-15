@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Misión Calidad | Reto interactivo</title>
+<style>
+:root{--bg:#0b1020;--card:#151e34;--card2:#202b47;--line:#34415f;--txt:#f3f6ff;--muted:#b0bdd8;--purple:#8b70ff;--mint:#35e0ae;--red:#ff6f86;--gold:#ffd166}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0%,#30235e 0,transparent 35%),var(--bg);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.5}.wrap{max-width:980px;width:92%;margin:26px auto 60px}.hero,.panel,.activity{border:1px solid var(--line);background:linear-gradient(145deg,#18223a,#12192b);border-radius:22px;padding:24px;box-shadow:0 12px 35px #0003}.hero{padding:30px;margin-bottom:18px}.eyebrow{text-transform:uppercase;letter-spacing:2px;color:#c2b6ff;font-size:.78rem;font-weight:850}.hero h1{font-size:clamp(2rem,5vw,3.25rem);line-height:1.05;margin:12px 0}.hero p,.muted{color:var(--muted)}.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.chip{border:1px solid var(--line);background:#ffffff09;border-radius:99px;padding:7px 12px;font-size:.88rem}.mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}.mission{background:#ffffff08;border:1px solid var(--line);border-radius:14px;padding:13px}.mission b{display:block;color:#d2caff}.mission small{color:var(--muted)}.topbar{position:sticky;top:0;z-index:10;background:#0b1020eF;backdrop-filter:blur(10px);padding:12px 0;margin-bottom:18px}.progressrow{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:.9rem;color:var(--muted);margin-bottom:7px}.track{height:9px;border-radius:99px;background:#26324c;overflow:hidden}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--mint));transition:width .25s}.tabs{display:flex;gap:8px;overflow:auto;margin:16px 0}.tab{white-space:nowrap;border:1px solid var(--line);background:#19233a;color:var(--muted);padding:10px 13px;border-radius:11px;cursor:pointer;font-weight:750}.tab.active{background:#8b70ff2b;color:#fff;border-color:var(--purple)}.activity{margin:18px 0;display:none}.activity.active{display:block}.activity-head{display:flex;align-items:flex-start;gap:13px;margin-bottom:16px}.emoji{font-size:1.65rem;background:#8b70ff20;border-radius:13px;padding:9px}.activity h2{margin:0;font-size:1.4rem}.activity-head p{margin:4px 0 0;color:var(--muted)}.time{margin-left:auto;white-space:nowrap;border-radius:99px;padding:6px 10px;background:#ffd16619;color:var(--gold);font-size:.85rem;font-weight:800}.question{padding:17px 0;border-top:1px solid #ffffff12}.question:first-child{border-top:0}.qtitle{font-weight:800;margin-bottom:12px}.options{display:grid;grid-template-columns:1fr 1fr;gap:9px}.opt{display:flex;align-items:flex-start;gap:9px;text-align:left;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card2);color:var(--txt);cursor:pointer;font:inherit;line-height:1.4}.opt:hover{border-color:var(--purple)}.opt.selected{border-color:var(--purple);background:#8b70ff25}.opt.correct{border-color:var(--mint);background:#35e0ae1a}.opt.wrong{border-color:var(--red);background:#ff6f861a}.opt:disabled{cursor:default}.letter{font-weight:900;color:#c7cde4}.feedback{display:none;margin-top:9px;padding:10px 12px;border-radius:10px;font-size:.92rem}.feedback.show{display:block}.feedback.good{background:#35e0ae15;color:#8df3d3}.feedback.bad{background:#ff6f8615;color:#ffb0bc}.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:850;font-size:.95rem;cursor:pointer}.primary{background:linear-gradient(135deg,#9b84ff,#6849e8);color:white}.secondary{background:#202b47;border:1px solid var(--line);color:var(--txt)}.success{background:#35e0ae1c;border:1px solid #35e0ae55;color:#b2ffe8;padding:12px 14px;border-radius:12px;margin-top:14px;display:none}.success.show{display:block}.field{width:100%;padding:12px;border-radius:11px;border:1px solid var(--line);background:#0f1729;color:var(--txt);font:inherit}.matchgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.matchitem{border:1px solid var(--line);background:var(--card2);padding:13px;border-radius:12px}.matchitem label{display:block;font-size:.88rem;color:var(--muted);margin-bottom:6px}.scenario{border:1px solid var(--line);padding:15px;border-radius:14px;margin:12px 0;background:#ffffff05}.scenario h3{margin:0 0 8px;font-size:1rem}.scenario p{margin:0 0 12px;color:var(--muted)}.result{display:none;margin-top:20px;padding:25px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#1b2845,#131a2d)}.result.show{display:block}.score{font-size:2.7rem;font-weight:950;line-height:1.2;color:var(--mint)}.rank{font-size:1.15rem;font-weight:850}.badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.badge{padding:8px 11px;border-radius:99px;background:#ffffff0b;border:1px solid var(--line)}.small{font-size:.86rem;color:var(--muted)}.foot{text-align:center;color:#7786a8;font-size:.83rem;margin-top:25px}.timerbox{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:15px}.timer{font-variant-numeric:tabular-nums;font-size:1.2rem;font-weight:900;background:#080e1c;border:1px solid var(--line);border-radius:10px;padding:7px 12px}.hidden{display:none!important}
+@media(max-width:650px){.wrap{width:94%;margin-top:12px}.hero,.panel,.activity{padding:18px}.mission-grid{grid-template-columns:1fr}.options,.matchgrid{grid-template-columns:1fr}.time{margin-left:0}.activity-head{flex-wrap:wrap}.topbar{position:static}}
+</style></head>
+<body><main class="wrap">
+<header class="hero">
+<div class="eyebrow">Experiencia de aprendizaje · 45 minutos</div>
+<h1>🎮 Misión Calidad</h1>
+<p>Completa las actividades, gana puntos y desbloquea tu resultado final. Practicarás calidad del software, COBIT, IEEE e ISO 37000 usando la guía de estudio.</p>
+<div class="chips"><span class="chip">🧠 5 actividades</span><span class="chip">⏱️ 45 min aproximados</span><span class="chip">🏆 100 puntos</span><span class="chip">💻 No necesita internet</span></div>
+<div class="mission-grid">
+<div class="mission"><b>1. Calentamiento</b><small>5 min · 10 puntos</small></div>
+<div class="mission"><b>2. Reto relámpago</b><small>10 min · 25 puntos</small></div>
+<div class="mission"><b>3. Une los conceptos</b><small>10 min · 20 puntos</small></div>
+<div class="mission"><b>4. Casos de la vida real</b><small>12 min · 25 puntos</small></div>
+<div class="mission"><b>5. Jefe final</b><small>8 min · 20 puntos</small></div>
+<div class="mission"><b>Meta</b><small>Aprender y superar 80 puntos</small></div>
+</div>
+<div class="timerbox"><span class="muted">Cronómetro de la sesión</span><span class="timer" id="timer">45:00</span><button class="btn secondary" id="startTimer">Iniciar tiempo</button><button class="btn secondary" id="pauseTimer">Pausar</button></div>
+<p class="small">El cronómetro es orientativo: puedes pausar y seguir trabajando sin perder tus respuestas.</p>
+</header>
+<div class="topbar"><div class="progressrow"><span id="progressLabel">Actividades completadas: 0 de 5</span><span id="pointsLabel">Puntos: 0/100</span></div><div class="track"><div class="bar" id="progress"></div></div></div>
+<nav class="tabs" id="tabs">
+<button class="tab active" data-go="0">1 · Calentamiento</button><button class="tab" data-go="1">2 · Reto relámpago</button><button class="tab" data-go="2">3 · Une conceptos</button><button class="tab" data-go="3">4 · Casos reales</button><button class="tab" data-go="4">5 · Jefe final</button>
+</nav>
+<section class="activity active" data-activity="0">
+<div class="activity-head"><div class="emoji">⚡</div><div><h2>Actividad 1: Calentamiento</h2><p>Responde rápido para entrar en modo misión.</p></div><span class="time">5 min · 10 pts</span></div>
+<div id="warmup"></div><div class="btnrow"><button class="btn primary" onclick="checkActivity(0)">Comprobar respuestas</button><button class="btn secondary" onclick="go(1)">Siguiente actividad →</button></div><div class="success" id="success0"></div>
+</section>
+<section class="activity" data-activity="1">
+<div class="activity-head"><div class="emoji">🚀</div><div><h2>Actividad 2: Reto relámpago</h2><p>Ocho preguntas de selección múltiple. Cada acierto suma puntos.</p></div><span class="time">10 min · 25 pts</span></div>
+<div id="rapid"></div><div class="btnrow"><button class="btn primary" onclick="checkActivity(1)">Calificar reto</button><button class="btn secondary" onclick="go(2)">Siguiente actividad →</button></div><div class="success" id="success1"></div>
+</section>
+<section class="activity" data-activity="2">
+<div class="activity-head"><div class="emoji">🧩</div><div><h2>Actividad 3: Une los conceptos</h2><p>Elige la descripción que corresponde a cada término.</p></div><span class="time">10 min · 20 pts</span></div>
+<div id="matching" class="matchgrid"></div><div class="btnrow"><button class="btn primary" onclick="checkActivity(2)">Comprobar parejas</button><button class="btn secondary" onclick="go(3)">Siguiente actividad →</button></div><div class="success" id="success2"></div>
+</section>
+<section class="activity" data-activity="3">
+<div class="activity-head"><div class="emoji">🛠️</div><div><h2>Actividad 4: Casos de la vida real</h2><p>Piensa como parte de un equipo de desarrollo y elige la mejor decisión.</p></div><span class="time">12 min · 25 pts</span></div>
+<div id="cases"></div><div class="btnrow"><button class="btn primary" onclick="checkActivity(3)">Resolver casos</button><button class="btn secondary" onclick="go(4)">Siguiente actividad →</button></div><div class="success" id="success3"></div>
+</section>
+<section class="activity" data-activity="4">
+<div class="activity-head"><div class="emoji">👑</div><div><h2>Actividad 5: Jefe final</h2><p>Último desafío. Reúne lo aprendido para terminar la misión.</p></div><span class="time">8 min · 20 pts</span></div>
+<div id="boss"></div><div class="btnrow"><button class="btn primary" onclick="checkActivity(4)">Terminar misión</button><button class="btn secondary" onclick="showResult()">Ver resultado actual</button></div><div class="success" id="success4"></div>
+</section>
+<section class="result" id="result"><div class="eyebrow">Reporte de misión</div><h2>Tu resultado final</h2><div class="score" id="finalScore">0/100</div><div class="rank" id="rank">¡Vamos!</div><p id="resultDesc" class="muted"></p><div class="badges" id="resultBadges"></div><div class="btnrow"><button class="btn primary" onclick="window.print()">Imprimir resultado</button><button class="btn secondary" onclick="resetAll()">Volver a empezar</button></div></section>
+<div class="foot">Basado en la guía de calidad del software, COBIT, IEEE e ISO 37000. El tiempo sugerido suma 45 minutos.</div>
+</main>
+<script>
+const activityDefs=[
+{key:'warmup',id:0,max:10,qs:[
+{q:'1. Una aplicación es bonita, pero pierde información. ¿Qué se puede concluir?',opts:['Es de calidad porque se ve bien','No es confiable, así que falla en calidad','Tiene muchos usuarios','No necesita pruebas'],a:1,why:'La guía indica que perder información significa que no es confiable.'},
+{q:'2. ¿Qué ayuda a lograr calidad del software?',opts:['Evitar documentación','Programar sin planificar','Definir requisitos, probar y documentar','Elegir solo los colores'],a:2,why:'Requisitos, pruebas y documentación son actividades importantes.'}
+]},
+{key:'rapid',id:1,max:25,qs:[
+{q:'¿Qué organización desarrolló COBIT?',opts:['IEEE','ISACA','SENA','Microsoft'],a:1,why:'COBIT fue desarrollado por ISACA.'},
+{q:'¿Cuál es el propósito principal de COBIT?',opts:['Diseñar páginas web','Crear bases de datos automáticamente','Gobernar y gestionar información y tecnología','Reemplazar la programación'],a:2,why:'COBIT es un marco de gobierno y gestión de información y tecnología.'},
+{q:'¿Qué significa EDM?',opts:['Evaluar, dirigir y supervisar','Ejecutar, diseñar y modificar','Entregar, documentar y mantener','Estudiar, desarrollar y medir'],a:0,why:'EDM significa Evaluar, dirigir y supervisar.'},
+{q:'¿Con qué se relaciona DSS?',opts:['Diseño gráfico','Estrategia de ventas','Entregar servicios y dar soporte','Crear contraseñas'],a:2,why:'DSS se relaciona con entregar servicios y dar soporte.'},
+{q:'¿Qué hace IEEE de forma importante?',opts:['Administra todas las empresas','Desarrolla estándares técnicos','Programa todas las aplicaciones','Evita las pruebas'],a:1,why:'IEEE desarrolla estándares técnicos y de ingeniería.'},
+{q:'¿Con qué se relaciona IEEE 730 en la guía?',opts:['Aseguramiento de la calidad del software','Gestión de inventarios','Gobierno general de una organización','Redes sociales'],a:0,why:'En la guía, IEEE 730 se relaciona con aseguramiento de la calidad del software.'},
+{q:'¿Qué aborda ISO/IEC/IEEE 12207?',opts:['Solo diseño visual','Procesos del ciclo de vida del software','Solo redes inalámbricas','Contabilidad empresarial'],a:1,why:'La norma aborda procesos del ciclo de vida del software.'},
+{q:'¿Qué es ISO 37000:2021?',opts:['Un lenguaje de programación','Una norma para videojuegos','Orientación para el gobierno organizacional','Un estándar exclusivo para Wi-Fi'],a:2,why:'ISO 37000 orienta el gobierno de las organizaciones.'}
+]},
+{key:'boss',id:4,max:20,qs:[
+{q:'¿Cuál es el orden de los dominios de COBIT 2019 que aparece en la guía?',opts:['APO, EDM, DSS, BAI, MEA','EDM, APO, BAI, DSS, MEA','BAI, DSS, EDM, APO, MEA','EDM, BAI, APO, MEA, DSS'],a:1,why:'El orden indicado es EDM, APO, BAI, DSS, MEA.'},
+{q:'¿Qué conclusión resume mejor los temas de la exposición?',opts:['La calidad depende solo de la apariencia','COBIT, IEEE e ISO 37000 son iguales','Tienen enfoques diferentes y pueden complementarse','La calidad no necesita estándares'],a:2,why:'La guía concluye que sus enfoques son diferentes y complementarios.'},
+{q:'¿Qué debería hacer una serviteca antes de desarrollar un sistema?',opts:['Entregarlo sin probar','Definir necesidades y objetivos','Ignorar a los usuarios','Comprar cualquier herramienta'],a:1,why:'Primero se definen necesidades y objetivos.'},
+{q:'¿Qué actividad corresponde después de implementar un sistema?',opts:['Olvidar el proyecto','Eliminar la documentación','Dar soporte y atender incidentes','Evitar revisar su funcionamiento'],a:2,why:'Después de implementar, corresponde dar soporte y atender incidentes.'}
+]}
+];
+const matches=[
+['COBIT','Gobierno y gestión de información y tecnología empresarial'],
+['IEEE','Desarrolla estándares técnicos de ingeniería'],
+['ISO 37000','Orientación para el gobierno de las organizaciones'],
+['IEEE 730','Aseguramiento de la calidad del software'],
+['ISO/IEC/IEEE 12207','Procesos del ciclo de vida del software']
+];
+const matchOptions=[
+'Procesos del ciclo de vida del software',
+'Gobierno y gestión de información y tecnología empresarial',
+'Orientación para el gobierno de las organizaciones',
+'Aseguramiento de la calidad del software',
+'Desarrolla estándares técnicos de ingeniería'
+];
+const cases=[
+{q:'Una serviteca registra clientes y vehículos en papel, y se pierden datos. ¿Cuál sería el primer paso antes de construir un sistema?',p:'Elige la decisión que mejor encaja con la guía.',opts:['Comprar el primer programa que aparezca','Definir necesidades y objetivos','Cambiar los colores del formulario','Entregar el sistema sin probar'],a:1,why:'Primero hay que definir necesidades y objetivos.'},
+{q:'El sistema ya está funcionando, pero los usuarios reportan fallos. ¿Qué debería hacerse?',p:'Piensa en la operación y el mantenimiento.',opts:['Ignorar los reportes','Borrar la documentación','Dar soporte y atender incidentes','Dejar de revisar el sistema'],a:2,why:'La guía señala el soporte y la atención de incidentes tras la implementación.'},
+{q:'Una organización necesita definir quién aprueba cambios de seguridad y quién supervisa decisiones. ¿Qué tema aplica?',p:'Identifica el concepto de gobierno.',opts:['Solo diseño gráfico','Gobierno organizacional y responsabilidades','Solo instalación de equipos','Creación de redes sociales'],a:1,why:'Definir responsabilidades y supervisar decisiones se relaciona con el gobierno organizacional.'},
+{q:'Un equipo quiere saber qué verificar y cómo registrar errores para asegurar la calidad. ¿Qué tema encaja mejor?',p:'Selecciona la opción relacionada con la calidad.',opts:['Aseguramiento de la calidad','Popularidad de una aplicación','Diseño de un logotipo','Comprar computadores'],a:0,why:'La guía relaciona el aseguramiento de calidad con qué verificar y cómo registrar errores.'},
+{q:'Una empresa va a invertir en tecnología. ¿Qué debería analizar?',p:'Evita decidir solo por moda.',opts:['Lo que compró otra empresa','Solo el precio del equipo','Necesidades, beneficios y riesgos','La red social más popular'],a:2,why:'La guía propone analizar necesidades, beneficios y riesgos.'}
+];
+function buildChoice(container,qs,prefix){
+ const root=document.getElementById(container);
+ qs.forEach((q,i)=>{
+  const wrap=document.createElement('div');wrap.className='question';wrap.dataset.q=i;
+  const title=document.createElement('div');title.className='qtitle';title.textContent=q.q;wrap.append(title);
+  if(q.p){const p=document.createElement('p');p.className='muted';p.textContent=q.p;wrap.append(p)}
+  const opts=document.createElement('div');opts.className='options';
+  q.opts.forEach((o,j)=>{const b=document.createElement('button');b.type='button';b.className='opt';b.innerHTML='<span class="letter">'+String.fromCharCode(65+j)+'.</span><span></span>';b.querySelector('span:last-child').textContent=o;b.addEventListener('click',()=>{if(wrap.dataset.checked==='1')return;opts.querySelectorAll('.opt').forEach(x=>x.classList.remove('selected'));b.classList.add('selected')});opts.append(b)});
+  const fb=document.createElement('div');fb.className='feedback';wrap.append(opts,fb);root.append(wrap);
+ });
+}
+buildChoice('warmup',activityDefs[0].qs);
+buildChoice('rapid',activityDefs[1].qs);
+buildChoice('boss',activityDefs[2].qs);
+buildChoice('cases',cases);
+const matching=document.getElementById('matching');
+matches.forEach((m,i)=>{const box=document.createElement('div');box.className='matchitem';const label=document.createElement('label');label.textContent=m[0];const sel=document.createElement('select');sel.className='field';sel.dataset.match=i;sel.innerHTML='<option value="">Selecciona la descripción…</option>'+matchOptions.map((x,j)=>`<option value="${j}">${x}</option>`).join('');box.append(label,sel);matching.append(box)});
+let scores=[null,null,null,null,null],started=false,seconds=45*60,timerId=null;
+function go(n){document.querySelectorAll('.activity').forEach((a,i)=>a.classList.toggle('active',i===n));document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===n));window.scrollTo({top:document.querySelector('.tabs').offsetTop-10,behavior:'smooth'})}
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>go(Number(t.dataset.go))));
+function checkChoiceActivity(id,container,qs,max){
+ const card=document.getElementById(container), items=[...card.querySelectorAll('.question')];let correct=0;
+ items.forEach((item,i)=>{const q=qs[i];const buttons=[...item.querySelectorAll('.opt')];const selected=buttons.findIndex(b=>b.classList.contains('selected'));const fb=item.querySelector('.feedback');item.dataset.checked='1';buttons.forEach((b,j)=>{b.disabled=true;if(j===q.a)b.classList.add('correct');if(j===selected&&selected!==q.a)b.classList.add('wrong')});if(selected===q.a)correct++;fb.className='feedback show '+(selected===q.a?'good':'bad');fb.textContent=(selected===q.a?'✓ Correcto. ':'✕ Revisa: ')+q.why;});
+ scores[id]=Math.round(correct/qs.length*max);showSuccess(id,correct,qs.length,scores[id],max);updateScore();
+}
+function checkActivity(id){
+ if(scores[id]!==null)return;
+ if(id===0)checkChoiceActivity(0,'warmup',activityDefs[0].qs,10);
+ if(id===1)checkChoiceActivity(1,'rapid',activityDefs[1].qs,25);
+ if(id===2){let correct=0;const sels=[...matching.querySelectorAll('select')];sels.forEach((s,i)=>{s.disabled=true;const good=matches[i][1]===matchOptions[Number(s.value)];if(good)correct++;s.style.borderColor=good?'var(--mint)':'var(--red)';s.style.background=good?'#123a35':'#3c202d';});scores[2]=Math.round(correct/matches.length*20);showSuccess(2,correct,matches.length,scores[2],20);updateScore();}
+ if(id===3)checkChoiceActivity(3,'cases',cases,25);
+ if(id===4){checkChoiceActivity(4,'boss',activityDefs[2].qs,20);showResult();}
+}
+function showSuccess(id,c,total,score,max){const el=document.getElementById('success'+id);el.textContent=`Actividad completada: ${c}/${total} correctas · Ganaste ${score} de ${max} puntos.`;el.classList.add('show')}
+function updateScore(){const completed=scores.filter(x=>x!==null).length;const points=scores.reduce((a,x)=>a+(x||0),0);document.getElementById('progressLabel').textContent=`Actividades completadas: ${completed} de 5`;document.getElementById('pointsLabel').textContent=`Puntos: ${points}/100`;document.getElementById('progress').style.width=(completed/5*100)+'%';}
+function showResult(){const points=scores.reduce((a,x)=>a+(x||0),0);const completed=scores.filter(x=>x!==null).length;const result=document.getElementById('result');result.classList.add('show');document.getElementById('finalScore').textContent=points+'/100';let rank=points>=90?'🏆 Leyenda de la calidad':points>=80?'🥇 Misión superada':points>=60?'🧠 Buen avance, sigue practicando':'🔧 Entrenamiento completado';document.getElementById('rank').textContent=rank;document.getElementById('resultDesc').textContent=`Has completado ${completed} de 5 actividades. ${points>=80?'¡Superaste la meta de 80 puntos!':'Revisa las respuestas marcadas y vuelve a intentarlo para superar los 80 puntos.'}`;document.getElementById('resultBadges').innerHTML=scores.map((s,i)=>`<span class="badge">${['Calentamiento','Reto relámpago','Une conceptos','Casos reales','Jefe final'][i]}: ${s===null?'pendiente':s+' pts'}</span>`).join('');result.scrollIntoView({behavior:'smooth',block:'start'});}
+function resetAll(){scores=[null,null,null,null,null];document.querySelectorAll('.success').forEach(x=>{x.classList.remove('show');x.textContent=''});document.querySelectorAll('.result').forEach(x=>x.classList.remove('show'));document.getElementById('warmup').innerHTML='';document.getElementById('rapid').innerHTML='';document.getElementById('boss').innerHTML='';document.getElementById('cases').innerHTML='';buildChoice('warmup',activityDefs[0].qs);buildChoice('rapid',activityDefs[1].qs);buildChoice('boss',activityDefs[2].qs);buildChoice('cases',cases);matching.innerHTML='';matches.forEach((m,i)=>{const box=document.createElement('div');box.className='matchitem';const label=document.createElement('label');label.textContent=m[0];const sel=document.createElement('select');sel.className='field';sel.innerHTML='<option value="">Selecciona la descripción…</option>'+matchOptions.map((x,j)=>`<option value="${j}">${x}</option>`).join('');box.append(label,sel);matching.append(box)});updateScore();go(0)}
+function renderTimer(){const m=Math.floor(seconds/60),s=seconds%60;document.getElementById('timer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
+document.getElementById('startTimer').addEventListener('click',()=>{if(timerId)return;started=true;timerId=setInterval(()=>{if(seconds>0){seconds--;renderTimer()}else{clearInterval(timerId);timerId=null;document.getElementById('timer').textContent='00:00';alert('Se acabó el tiempo sugerido. Puedes terminar la actividad si lo necesitas.')}},1000)});
+document.getElementById('pauseTimer').addEventListener('click',()=>{if(timerId){clearInterval(timerId);timerId=null}});
+renderTimer();
+</script></body></html>
