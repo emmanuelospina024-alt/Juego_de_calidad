@@ -1,13 +1,22 @@
 # Misión Calidad – Reto Interactivo
+# 🎮 Misión Calidad | Aprende, juega y supera el reto 🚀
 
-Se desarrolló una página web interactiva llamada **Misión Calidad**, diseñada como una herramienta educativa para aprender y evaluar conocimientos sobre la calidad del software, COBIT, IEEE e ISO 37000.
+¡Bienvenido a **Misión Calidad**! 🏆 Una experiencia interactiva diseñada para convertir el aprendizaje sobre la calidad del software en un desafío divertido, dinámico y lleno de retos.
 
-La aplicación cuenta con cinco actividades: calentamiento, reto relámpago, asociación de conceptos, casos de la vida real y jefe final. Incluye preguntas de selección múltiple, ejercicios para relacionar conceptos, retroalimentación inmediata, sistema de puntuación sobre 100 puntos y una barra de progreso para visualizar las actividades completadas.
+🧠 **Pon a prueba tus conocimientos** sobre COBIT, IEEE, ISO 37000 y calidad del software a través de cinco actividades interactivas que combinan preguntas, asociación de conceptos y situaciones de la vida real.
 
-También incorpora un cronómetro de 45 minutos con opciones para iniciar y pausar, un reporte con los resultados obtenidos, insignias según el desempeño, opción para imprimir los resultados y posibilidad de reiniciar la misión.
+⚡ **¿Qué encontrarás?**
+- 🎯 5 desafíos para demostrar lo que sabes.
+- 💎 100 puntos disponibles para alcanzar la victoria.
+- 📊 Barra de progreso para seguir tu avance.
+- ⏱️ Cronómetro de 45 minutos para vivir la experiencia al máximo.
+- ✅ Respuestas con retroalimentación para aprender de cada error.
+- 🏅 Resultados finales, insignias y opción para imprimir tu puntuación.
 
-El proyecto fue desarrollado utilizando **HTML, CSS y JavaScript**, con un diseño moderno, colores oscuros, elementos interactivos y adaptación a dispositivos móviles. Además, funciona sin necesidad de conexión a internet, ya que no depende de servicios externos.
+💻 **Diseño moderno, experiencia intuitiva y acceso sin internet.** Desarrollado con HTML, CSS y JavaScript, este proyecto combina tecnología, aprendizaje y gamificación en una sola página web, adaptable también a dispositivos móviles.
 
-**Objetivo:** facilitar el aprendizaje de conceptos relacionados con la calidad del software mediante actividades dinámicas, prácticas y evaluables.
+🔥 **Tu misión:** aprender, superar los desafíos y conseguir al menos 80 puntos para completar el reto.
+
+**¿Estás listo para convertirte en una leyenda de la calidad? ¡Que comience la misión!** 🏆
 
 https://aesthetic-quokka-541ec6.netlify.app/
